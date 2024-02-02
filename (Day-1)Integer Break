@@ -1,0 +1,19 @@
+class Solution {
+    public int integerBreak(int N) {
+        if (N == 2 || N == 3)
+            return N-1;
+        int maxProduct = -1;
+        switch (N % 3) {
+        case 0:
+            maxProduct = (int)Math.pow(3, N / 3);
+            break;
+        case 1:
+            maxProduct = 2 * 2 * (int)Math.pow(3, (N -4)/3);
+            break;
+        case 2:
+            maxProduct = 2 * (int)Math.pow(3, N / 3);
+            break;
+        }
+        return maxProduct;
+    }
+}
